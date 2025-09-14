@@ -1,5 +1,21 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+// vue的入口文件main.js
 
-createApp(App).mount('#app')
+// 导入Vue核心API
+import { createApp } from 'vue'
+// 导入全局样式
+import './style.css'
+// 导入根组件
+import App from './App.vue'
+// 导入路由实例
+import router from './router'
+
+// 创建Vue应用实例
+// createApp(App).mount('#app')
+
+// 一分为二
+const app = createApp(App)
+// 注册路由插件：将路由能力注入Vue实例
+app.use(router)
+// 挂载应用到DOM
+app.mount('#app')
+
