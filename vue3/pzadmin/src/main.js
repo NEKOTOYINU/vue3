@@ -8,6 +8,10 @@ import './style.css'
 import App from './App.vue'
 // 导入路由实例
 import router from './router'
+// 导入组件库实例
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
 
 // 创建Vue应用实例
 // createApp(App).mount('#app')
@@ -16,6 +20,8 @@ import router from './router'
 const app = createApp(App)
 // 注册路由插件：将路由能力注入Vue实例
 app.use(router)
+// 注册组件库：将路由能力注入Vue实例
+app.use(ElementPlus)
 // 挂载应用到DOM
 app.mount('#app')
 
