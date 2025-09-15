@@ -11,6 +11,8 @@ import router from './router'
 // 导入组件库实例
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+// 导入组件库的图标
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 
 // 创建Vue应用实例
@@ -22,6 +24,11 @@ const app = createApp(App)
 app.use(router)
 // 注册组件库：将路由能力注入Vue实例
 app.use(ElementPlus)
+// 组件库的图标
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
 // 挂载应用到DOM
 app.mount('#app')
+
 
