@@ -13,7 +13,8 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 // 导入组件库的图标
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-
+//引入vuex状态管理库
+import store from './store'
 
 // 创建Vue应用实例
 // createApp(App).mount('#app')
@@ -28,6 +29,8 @@ app.use(ElementPlus)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
+// 注册状态管理库vuex store挂载
+app.use(store)
 // 挂载应用到DOM
 app.mount('#app')
 

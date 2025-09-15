@@ -1,6 +1,6 @@
 <template>
 <el-menu
-        :style="{width: '230px'}"
+        :style="{width: !isCollapse ? '230px' :'64px'}"
         active-text-color="#ffd04b"
         background-color="#545c64"
         class="el-menu-vertical-demo"
@@ -8,8 +8,9 @@
         text-color="#fff"
         @open="handleOpen"
         @close="handleClose"
+        :collapse="isCollapse"
       >
-      <p class="logo-lg">DIDI陪诊</p>
+      <p class="logo-lg">{{isCollapse ?'DIDI' :'DIDI陪诊'}}</p>
       
         <!-- <el-sub-menu index="1">
           <template #title>
@@ -51,14 +52,17 @@
 import TreeMenu from './treeMenu.vue';
 //获取实例
 import { useRouter } from 'vue-router' 
-//创建响应式数据对象
-import { reactive } from 'vue';
+//创建响应式数据对象 组合式api
+import { reactive,computed } from 'vue';
+import { useStore } from 'vuex'
 
 //调用实例
 const router = useRouter()
 console.log(router,'router')
 const menuData = reactive(router.options.routes[0].children)
 console.log(menuData,"打印")
+const store = useStore()
+const isCollapse = computed(() => store.state.menu.isCollapse)
 
 const handleOpen = () => {}
 const handleClose = () => {}
