@@ -25,7 +25,7 @@ import Order from '../views/vppz/order/index.vue' // 订单管理组件
 // ]
 
 const routes = [
-  { 
+  {
     path: '/',
     component: Layout,
     name: 'main',
@@ -37,7 +37,7 @@ const routes = [
       },
       {
         path: 'auth',
-        meta: { id: '2' ,name: '权限管理', icon: 'Grid' },
+        meta: { id: '2', name: '权限管理', icon: 'Grid' },
         children: [
           {
             path: '',

@@ -18,9 +18,9 @@ import store from './store'
 
 // 创建Vue应用实例
 // createApp(App).mount('#app')
-
-// 一分为二
+// 创建Vue应用实例 一分为二
 const app = createApp(App)
+
 // 注册路由插件：将路由能力注入Vue实例
 app.use(router)
 // 注册组件库：将路由能力注入Vue实例
@@ -31,6 +31,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 // 注册状态管理库vuex store挂载
 app.use(store)
+
 // 挂载应用到DOM
 app.mount('#app')
 
